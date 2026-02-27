@@ -1,0 +1,26 @@
+p {
+  color: red;
+}
+
+.highlight {
+  color: pink;
+}
+
+#special {
+  color: black;
+}
+
+/* Stage 1 */
+p {
+  color: gray;
+}
+
+/* Stage 2 */
+p.highlight {
+  color: blue;
+}
+
+/* Stage 3 */
+p.highlight {
+  color: green;
+}
