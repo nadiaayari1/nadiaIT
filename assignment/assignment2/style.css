@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  color: #333; /* This will be overridden by the embedded CSS (h2 { color: darkgreen; }) */
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+a {
+  color: #0066cc;
+}
+
+/* Reusable class (must be used at least twice in HTML) */
+.section-box {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.profile-img {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 18px;
+}
