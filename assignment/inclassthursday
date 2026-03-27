@@ -47,47 +47,10 @@
 
   <script>
 
-    // ============================================================
-    //  QUICK ORIENTATION
-    //
-    //  JavaScript runs after the HTML loads.
-    //  It can read and rewrite anything on the page.
-    //
-    //  A variable is a named box that holds a value:
-    //    let age = 18;
-    //    let city = "New York";
-    //
-    //  An if/else lets the code make a decision:
-    //    if (age >= 18) {
-    //      // do this
-    //    } else {
-    //      // do that
-    //    }
-    //
-    //  That's all you need for today. Let's go.
-    // ============================================================
-
-
-    // ============================================================
-    //  TODO 1 — Make it yours
-    //
-    //  Three variables are declared below.
-    //  Right now they hold placeholder values.
-    //  Replace them with your own.
-    //
-    //  After each change: save → switch to browser → refresh.
-    //  Something on the page should update.
-    //
-    //  For the color: it accepts any valid CSS color name.
-    //  If you're not sure what counts, just try something —
-    //  worst case nothing changes.
-    // ============================================================
-
-    let studentName   = "Your Name";   // TODO 1a
-    let year          = 1;             // TODO 1b — use 1, 2, 3, or 4
-    let favoriteColor = "steelblue";   // TODO 1c
-
-    // -- you don't need to touch anything below this line for TODO 1 --
+    // TODO 1 — Your info
+    let studentName   = "Nadia";
+    let year          = 4;
+    let favoriteColor = "navy";
 
     let yearLabel;
     if      (year === 1) { yearLabel = "Freshman";  }
@@ -97,37 +60,19 @@
     else                 { yearLabel = "Unknown year — try a number between 1 and 4"; }
 
     let box = document.getElementById("result-box");
-    box.textContent             = "Hi, I'm " + studentName + ". I'm a " + yearLabel + ".";
-    box.style.borderColor       = favoriteColor;
-    box.style.backgroundColor   = favoriteColor;
-    box.style.color             = "white";
+    box.textContent           = "Hi, I'm " + studentName + ". I'm a " + yearLabel + ".";
+    box.style.borderColor     = favoriteColor;
+    box.style.backgroundColor = favoriteColor;
+    box.style.color           = "white";
 
 
-    // ============================================================
-    //  TODO 2 — Fix the grade checker
-    //
-    //  The code below is supposed to look at testScore and
-    //  display the right letter grade. The logic should be:
-    //
-    //    90 or above  →  "A — great work"
-    //    80 or above  →  "B — solid effort"
-    //    70 or above  →  "C — room to grow"
-    //    below 70     →  "needs improvement"
-    //
-    //  Try it as-is first. Refresh the browser and see what
-    //  the page actually shows. Does it match the rules above?
-    //
-    //  Hint: JavaScript reads if/else top to bottom and stops
-    //  at the first condition that is true.
-    // ============================================================
-
+    // TODO 2 — Fixed grade checker
     let testScore = 85;
-
     let gradeMessage;
 
     if (testScore >= 90) {
       gradeMessage = "A — great work";
-    } else if (testScore >= 50) {
+    } else if (testScore >= 80) {
       gradeMessage = "B — solid effort";
     } else if (testScore >= 70) {
       gradeMessage = "C — room to grow";
@@ -136,27 +81,24 @@
     }
 
     let messageBox = document.getElementById("grade-message");
-    messageBox.textContent      = "Score: " + testScore + " → " + gradeMessage;
-    messageBox.style.display    = "block";
+    messageBox.textContent   = "Score: " + testScore + " → " + gradeMessage;
+    messageBox.style.display = "block";
     messageBox.style.background = testScore >= 80 ? "#d4edda" : "#fff3cd";
     messageBox.style.color      = testScore >= 80 ? "#155724" : "#856404";
 
 
-    // ============================================================
-    //  TODO 3 — Stretch
-    //
-    //  Add your own condition below this comment.
-    //  It should check testScore and store something
-    //  in a variable called extraNote.
-    //
-    //  Then add this line to show it on the page:
-    //    messageBox.textContent += "  |  " + extraNote;
-    //
-    //  What the condition checks and what it says is up to you.
-    // ============================================================
+    // TODO 3 — Extra note
+    let extraNote;
 
- 
+    if (testScore >= 90) {
+      extraNote = "You're killing it!";
+    } else if (testScore >= 70) {
+      extraNote = "Keep pushing!";
+    } else {
+      extraNote = "You got this, don't give up!";
+    }
 
+    messageBox.textContent += "  |  " + extraNote;
 
   </script>
 </body>
