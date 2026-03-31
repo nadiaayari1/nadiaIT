@@ -1,51 +1,19 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0a0f2c; /* navy vibe */
+    background-color: #d6a4d4; /* your pink background */
+    font-family: Arial;
+}
+
+h1 {
+    background-color: #3f66cc; /* blue header */
     color: white;
+    padding: 20px;
 }
 
-/* HEADER */
-header {
-    text-align: center;
-    padding: 40px 20px;
+h2 {
+    color: #3f66cc;
 }
 
-header h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-header p {
-    color: #aab4ff;
-    font-size: 18px;
-}
-
-/* ABOUT SECTION */
-.about {
-    text-align: center;
-    padding: 20px 40px;
-    max-width: 600px;
-    margin: auto;
-}
-
-/* GALLERY */
-.gallery {
-    text-align: center;
-    padding: 30px 20px;
-}
-
-.photo {
-    width: 90%;
-    max-width: 500px;
-    height: auto;
-    margin: 20px auto;
-    display: block;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-}
-
-/* hover effect = looks more advanced */
-.photo:hover {
-    transform: scale(1.03);
+img {
+    width: 200px;
+    margin: 10px;
 }
