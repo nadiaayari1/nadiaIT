@@ -1,117 +1,51 @@
-/* GENERAL */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #FABFFF;
-  color: #1f1f2e;
-  line-height: 1.6;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a0f2c; /* navy vibe */
+    color: white;
 }
 
 /* HEADER */
 header {
-  background-color: #3965E6;
-  color: white;
-  padding: 20px;
+    text-align: center;
+    padding: 40px 20px;
 }
 
 header h1 {
-  margin: 0 0 10px 0;
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
-/* NAVIGATION (Flexbox) */
-nav {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
+header p {
+    color: #aab4ff;
+    font-size: 18px;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+/* ABOUT SECTION */
+.about {
+    text-align: center;
+    padding: 20px 40px;
+    max-width: 600px;
+    margin: auto;
 }
 
-nav a:hover {
-  text-decoration: underline;
+/* GALLERY */
+.gallery {
+    text-align: center;
+    padding: 30px 20px;
 }
 
-/* MAIN CONTENT */
-main {
-  padding: 30px;
+.photo {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
 }
 
-/* REUSABLE SECTION */
-.section-box {
-  background-color: white;
-  border: 2px solid #AFEBF3;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-}
-
-/* HERO SECTION (Flexbox) */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.hero-text {
-  flex: 1;
-  min-width: 250px;
-}
-
-.hero-image {
-  flex: 1;
-  min-width: 250px;
-  text-align: center;
-}
-
-.hero-image img {
-  width: 100%;
-  max-width: 300px;
-  height: 360px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 3px solid #B58CF5;
-}
-
-/* CARDS (Flexbox requirement) */
-.card-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.card {
-  flex: 1;
-  min-width: 250px;
-  background-color: #AFEBF3;
-  padding: 15px;
-  border-radius: 12px;
-  border: 2px solid #3965E6;
-}
-
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-/* HEADINGS */
-h2, h3 {
-  color: #4539E6;
-}
-
-/* FOOTER */
-footer {
-  background-color: #3965E6;
-  color: white;
-  text-align: center;
-  padding: 15px;
+/* hover effect = looks more advanced */
+.photo:hover {
+    transform: scale(1.03);
 }
