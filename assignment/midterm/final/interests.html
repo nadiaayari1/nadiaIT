@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interests | Nadia Ayari</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics tag goes here if you have it -->
+</head>
+<body>
+
+  <header>
+    <h1>My Interests</h1>
+    <p>Filter through my creative interests</p>
+
+    <nav>
+      <a href="index.html" onclick="gtag('event', 'nav_home_click');">Home</a>
+      <a href="about.html" onclick="gtag('event', 'nav_about_click');">About</a>
+      <a href="work.html" onclick="gtag('event', 'nav_work_click');">Work</a>
+      <a href="contact.html" onclick="gtag('event', 'nav_contact_click');">Contact</a>
+      <a href="interests.html" onclick="gtag('event', 'nav_interests_click');">Interests</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section-box">
+      <h2>Interest Filter</h2>
+      <p>Use the dropdown to filter my interests by category.</p>
+
+      <label for="category-filter">Choose a category:</label>
+
+      <select id="category-filter" onchange="filterItems(this.value); gtag('event', 'filter_dropdown_used');">
+        <option value="">All</option>
+        <option value="Photography">Photography</option>
+        <option value="Cars">Cars</option>
+        <option value="Travel">Travel</option>
+      </select>
+
+      <p id="results-count"></p>
+
+      <div id="items-container"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Nadia Ayari</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
