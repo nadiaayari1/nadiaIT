@@ -17,6 +17,7 @@ gtag('config', 'G-DT0EK1GHT7');
 <title>My Interests</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
@@ -25,11 +26,6 @@ gtag('config', 'G-DT0EK1GHT7');
 </header>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="work.html">Work</a>
-  <a href="interests.html">Interests</a>
-  <a href="contact.html">Contact</a>
   <a href="index.html" onclick="gtag('event', 'nav_home_click')">Home</a>
 
   <a href="about.html" onclick="gtag('event', 'nav_about_click')">About</a>
@@ -42,25 +38,50 @@ gtag('config', 'G-DT0EK1GHT7');
 </nav>
 
 <main>
+
 <section class="gallery">
+
 <div class="card">
 <img src="images/costa-rica.jpg" alt="Travel photo">
+
 <h3>Travel</h3>
-<p>I love traveling because it gives me new places, experiences, and stories to photograph.</p>
+
+<p>
+I love traveling because it gives me new places,
+experiences, and stories to photograph.
+</p>
 </div>
 
 <div class="card">
 <img src="images/cars.jpg" alt="Car photography">
+
 <h3>Cars</h3>
-<p>I enjoy car photography and going to car events because they combine design, style, and community.</p>
+
+<p>
+I enjoy car photography and going to car events because
+they combine design, style, and community.
+</p>
 </div>
 
 <div class="card">
 <img src="images/vlogging.jpg" alt="Creative photography">
+
 <h3>Creativity</h3>
-<p>I am interested in creative projects that let me combine photography, editing, writing, and design.</p>
+
+<p>
+I am interested in creative projects that let me combine
+photography, editing, writing, and design.
+</p>
 </div>
+
 </section>
+
+<div style="text-align:center; margin:20px;">
+  <button onclick="showMessage()">Click Me</button>
+
+  <p id="message"></p>
+</div>
+
 </main>
 
 <footer>
@@ -68,5 +89,6 @@ gtag('config', 'G-DT0EK1GHT7');
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
