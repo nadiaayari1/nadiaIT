@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interests</title>
+  <title>My Interests</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
   <h1>My Interests</h1>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="work.html">Work</a>
-    <a href="interests.html">Interests</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <p>Travel, cars, photography, and creativity</p>
 </header>
 
-<section class="section-box">
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="work.html">Work</a>
+  <a href="interests.html">Interests</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-  <h2>Interest Filter</h2>
+<main>
+  <section class="gallery">
+    <div class="card">
+      <img src="images/travel.jpg" alt="Travel photo">
+      <h3>Travel</h3>
+      <p>I love traveling because it gives me new places, experiences, and stories to photograph.</p>
+    </div>
 
-  <select onchange="filterItems(this.value)">
-    <option value="">All</option>
-    <option value="Photography">Photography</option>
-    <option value="Cars">Cars</option>
-    <option value="Travel">Travel</option>
-  </select>
+    <div class="card">
+      <img src="images/cars.jpg" alt="Car photography">
+      <h3>Cars</h3>
+      <p>I enjoy car photography and going to car events because they combine design, style, and community.</p>
+    </div>
 
-  <p id="result-count"></p>
+    <div class="card">
+      <img src="images/creative.jpg" alt="Creative photography">
+      <h3>Creativity</h3>
+      <p>I am interested in creative projects that let me combine photography, editing, writing, and design.</p>
+    </div>
+  </section>
+</main>
 
-  <div id="items-container"></div>
-
-</section>
+<footer>
+  <p>&copy; 2026 Nadia Ayari</p>
+</footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
