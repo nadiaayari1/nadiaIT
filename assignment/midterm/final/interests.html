@@ -1,52 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interests | Nadia Ayari</title>
+  <title>Interests</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Google Analytics tag goes here if you have it -->
 </head>
+
 <body>
 
-  <header>
-    <h1>My Interests</h1>
-    <p>Filter through my creative interests</p>
+<header>
+  <h1>My Interests</h1>
 
-    <nav>
-      <a href="index.html" onclick="gtag('event', 'nav_home_click');">Home</a>
-      <a href="about.html" onclick="gtag('event', 'nav_about_click');">About</a>
-      <a href="work.html" onclick="gtag('event', 'nav_work_click');">Work</a>
-      <a href="contact.html" onclick="gtag('event', 'nav_contact_click');">Contact</a>
-      <a href="interests.html" onclick="gtag('event', 'nav_interests_click');">Interests</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="work.html">Work</a>
+    <a href="interests.html">Interests</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="section-box">
-      <h2>Interest Filter</h2>
-      <p>Use the dropdown to filter my interests by category.</p>
+<section class="section-box">
 
-      <label for="category-filter">Choose a category:</label>
+  <h2>Interest Filter</h2>
 
-      <select id="category-filter" onchange="filterItems(this.value); gtag('event', 'filter_dropdown_used');">
-        <option value="">All</option>
-        <option value="Photography">Photography</option>
-        <option value="Cars">Cars</option>
-        <option value="Travel">Travel</option>
-      </select>
+  <select onchange="filterItems(this.value)">
+    <option value="">All</option>
+    <option value="Photography">Photography</option>
+    <option value="Cars">Cars</option>
+    <option value="Travel">Travel</option>
+  </select>
 
-      <p id="results-count"></p>
+  <p id="result-count"></p>
 
-      <div id="items-container"></div>
-    </section>
-  </main>
+  <div id="items-container"></div>
 
-  <footer>
-    <p>&copy; 2026 Nadia Ayari</p>
-  </footer>
+</section>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
