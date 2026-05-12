@@ -1,111 +1,47 @@
-const items = [
-  {
-    name: "Costa Rica Photography",
-    category: "Photography",
-    image: "costa-rica.jpg",
-    description: "Travel photography from my solo trip through Costa Rica."
-  },
-  {
-    name: "Window Project",
-    category: "Photography",
-    image: "window-project.jpg",
-    description: "A photography series exploring movement and perspective through windows."
-  },
-  {
-    name: "Car Photography",
-    category: "Cars",
-    image: "cars.jpg",
-    description: "Photos from car meets and automotive events."
-  },
-  {
-    name: "GT3 RS Content",
-    category: "Cars",
-    image: "gt3rs.jpg",
-    description: "Automotive photography focused on Porsche GT3 RS models."
-  },
-  {
-    name: "Travel Vlogging",
-    category: "Travel",
-    image: "vlogging.jpg",
-    description: "Creating cinematic travel videos and social media content."
-  },
-  {
-    name: "Rainforest Adventures",
-    category: "Travel",
-    image: "rainforest.jpg",
-    description: "Exploring rainforests, waterfalls, and outdoor adventures."
-  }
-];
+// ================================
+// Nadia Ayari Final Project
+// script.js
+// ================================
 
-function renderItems(list) {
-  const container = document.getElementById("items-container");
+// Contact page button message
+function showMessage() {
+  const message = document.getElementById("message");
 
-  container.innerHTML = "";
-
-  for (let i = 0; i < list.length; i++) {
-    const card = document.createElement("div");
-
-    card.className = "item-card";
-
-    card.innerHTML =
-      "<img src='" + list[i].image + "' alt='" + list[i].name + "' class='card-image'>" +
-      "<h3>" + list[i].name + "</h3>" +
-      "<p>" + list[i].description + "</p>" +
-      "<span class='item-tag'>" + list[i].category + "</span>";
-
-    container.appendChild(card);
-  }
-
-  document.getElementById("result-count").textContent =
-    list.length + " items shown";
+  message.textContent = "Thank you for visiting my website!";
+  message.style.marginTop = "15px";
+  message.style.fontWeight = "bold";
+  message.style.color = "#3965E6";
 }
 
-function filterItems(category) {
-  switch (category) {
-    case "":
-      renderItems(items);
-      break;
+// Fade-in effect when page loads
+window.addEventListener("load", () => {
+  const sections = document.querySelectorAll(".section-box, .card");
 
-    case "Photography":
-      const filtered1 = [];
+  sections.forEach((section, index) => {
+    section.style.opacity = "0";
+    section.style.transform = "translateY(20px)";
+    section.style.transition = "all 0.6s ease";
 
-      for (let i = 0; i < items.length; i++) {
-        if (items[i].category === "Photography") {
-          filtered1.push(items[i]);
-        }
-      }
+    setTimeout(() => {
+      section.style.opacity = "1";
+      section.style.transform = "translateY(0)";
+    }, index * 150);
+  });
+});
 
-      renderItems(filtered1);
-      break;
+// Hover effect for cards
+const cards = document.querySelectorAll(".card");
 
-    case "Cars":
-      const filtered2 = [];
+cards.forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    card.style.transform = "scale(1.03)";
+    card.style.transition = "0.3s ease";
+  });
 
-      for (let i = 0; i < items.length; i++) {
-        if (items[i].category === "Cars") {
-          filtered2.push(items[i]);
-        }
-      }
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "scale(1)";
+  });
+});
 
-      renderItems(filtered2);
-      break;
-
-    case "Travel":
-      const filtered3 = [];
-
-      for (let i = 0; i < items.length; i++) {
-        if (items[i].category === "Travel") {
-          filtered3.push(items[i]);
-        }
-      }
-
-      renderItems(filtered3);
-      break;
-
-    default:
-      renderItems(items);
-      break;
-  }
-}
-
-filterItems("");
+// Console message
+console.log("Nadia Ayari Final Project Loaded");
