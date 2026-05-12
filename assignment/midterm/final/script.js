@@ -1,47 +1,66 @@
-// ================================
-// Nadia Ayari Final Project
-// script.js
-// ================================
+const items = [
+  {
+    title: "Photography",
+    category: "Photography",
+    description: "Photography helps me capture emotion, details, and perspective.",
+    image: "images/camera.jpg"
+  },
+  {
+    title: "Cars",
+    category: "Cars",
+    description: "I enjoy car photography and going to car events.",
+    image: "images/gt3rs.jpg"
+  },
+  {
+    title: "Travel",
+    category: "Travel",
+    description: "Travel gives me new experiences and stories to photograph.",
+    image: "images/costa-rica.jpg"
+  },
+  {
+    title: "Vlogging",
+    category: "Photography",
+    description: "I like creating digital storytelling through videos and photos.",
+    image: "images/vlogging.jpg"
+  }
+];
 
-// Contact page button message
+function filterItems() {
+  const filter = document.getElementById("category-filter");
+  const container = document.getElementById("items-container");
+  const count = document.getElementById("results-count");
+
+  if (!filter || !container || !count) {
+    return;
+  }
+
+  const selected = filter.value;
+
+  const filteredItems = selected === ""
+    ? items
+    : items.filter(item => item.category === selected);
+
+  container.innerHTML = "";
+
+  filteredItems.forEach(item => {
+    container.innerHTML += `
+      <div class="card">
+        <img src="${item.image}" alt="${item.title}">
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+      </div>
+    `;
+  });
+
+  count.textContent = filteredItems.length + " item(s) showing";
+}
+
 function showMessage() {
   const message = document.getElementById("message");
 
-  message.textContent = "Thank you for visiting my website!";
-  message.style.marginTop = "15px";
-  message.style.fontWeight = "bold";
-  message.style.color = "#3965E6";
+  if (message) {
+    message.textContent = "Thank you for visiting my website!";
+  }
 }
 
-// Fade-in effect when page loads
-window.addEventListener("load", () => {
-  const sections = document.querySelectorAll(".section-box, .card");
-
-  sections.forEach((section, index) => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(20px)";
-    section.style.transition = "all 0.6s ease";
-
-    setTimeout(() => {
-      section.style.opacity = "1";
-      section.style.transform = "translateY(0)";
-    }, index * 150);
-  });
-});
-
-// Hover effect for cards
-const cards = document.querySelectorAll(".card");
-
-cards.forEach((card) => {
-  card.addEventListener("mouseenter", () => {
-    card.style.transform = "scale(1.03)";
-    card.style.transition = "0.3s ease";
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "scale(1)";
-  });
-});
-
-// Console message
-console.log("Nadia Ayari Final Project Loaded");
+window.onload = filterItems;
