@@ -1,46 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nadia Ayari | Portfolio</title>
+  <title>Nadia Ayari Portfolio</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- Google Analytics tag goes here if you have it -->
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
+
 <body>
 
-  <header>
-    <h1>Nadia Ayari</h1>
-    <p>Photography, travel, and creative portfolio</p>
+<header>
+  <h1>Nadia Ayari</h1>
+  <p>Photography • Travel • Automotive Content</p>
 
-    <nav>
-      <a href="index.html" onclick="gtag('event', 'nav_home_click');">Home</a>
-      <a href="about.html" onclick="gtag('event', 'nav_about_click');">About</a>
-      <a href="work.html" onclick="gtag('event', 'nav_work_click');">Work</a>
-      <a href="contact.html" onclick="gtag('event', 'nav_contact_click');">Contact</a>
-      <a href="interests.html" onclick="gtag('event', 'nav_interests_click');">Interests</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html"
+    onclick="gtag('event', 'navigation_click', {'page_name':'Home'});">
+    Home
+    </a>
 
-  <main>
-    <section class="hero">
-      <div>
-        <h2>Welcome to My Portfolio</h2>
-        <p>This website highlights my creative work, personal interests, and growth as a student learning web development and analytics.</p>
-        <a class="button" href="work.html">View My Work</a>
-      </div>
-    </section>
+    <a href="about.html"
+    onclick="gtag('event', 'navigation_click', {'page_name':'About'});">
+    About
+    </a>
 
-    <section class="section-box">
-      <h2>About This Site</h2>
-      <p>For my final project, I upgraded my midterm portfolio by improving the design, adding a new page, creating a JavaScript filter feature, and tracking interactions with Google Analytics.</p>
-    </section>
-  </main>
+    <a href="work.html"
+    onclick="gtag('event', 'navigation_click', {'page_name':'Work'});">
+    Work
+    </a>
 
-  <footer>
-    <p>&copy; 2026 Nadia Ayari</p>
-  </footer>
+    <a href="interests.html"
+    onclick="gtag('event', 'navigation_click', {'page_name':'Interests'});">
+    Interests
+    </a>
+
+    <a href="contact.html"
+    onclick="gtag('event', 'navigation_click', {'page_name':'Contact'});">
+    Contact
+    </a>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="hero.jpg" alt="Portfolio Hero Image"
+  onclick="gtag('event', 'hero_image_click', {'image_name':'Hero Image'});">
+
+  <h2>Creative Portfolio</h2>
+
+  <p>
+    I am a photographer and content creator focused on travel,
+    automotive photography, and storytelling through visuals.
+  </p>
+</section>
 
 </body>
 </html>
