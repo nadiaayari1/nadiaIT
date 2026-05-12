@@ -1,66 +1,77 @@
-const items = [
+const interests = [
   {
-    title: "Photography",
-    category: "Photography",
-    description: "Photography helps me capture emotion, details, and perspective.",
-    image: "images/camera.jpg"
+    title: "Film Photography",
+    category: "photography",
+    description: "I enjoy shooting film and editing photos in Lightroom."
   },
+
   {
-    title: "Cars",
-    category: "Cars",
-    description: "I enjoy car photography and going to car events.",
-    image: "images/gt3rs.jpg"
+    title: "Costa Rica Travel",
+    category: "travel",
+    description: "I like adventure travel and documenting trips."
   },
+
   {
-    title: "Travel",
-    category: "Travel",
-    description: "Travel gives me new experiences and stories to photograph.",
-    image: "images/costa-rica.jpg"
+    title: "Gym Training",
+    category: "fitness",
+    description: "I enjoy strength training and StairMaster cardio."
   },
+
   {
-    title: "Vlogging",
-    category: "Photography",
-    description: "I like creating digital storytelling through videos and photos.",
-    image: "images/vlogging.jpg"
+    title: "Car Photography",
+    category: "photography",
+    description: "I photograph cars and attend car events."
+  },
+
+  {
+    title: "Surfing",
+    category: "travel",
+    description: "I recently started surfing in Costa Rica."
+  },
+
+  {
+    title: "Core Workouts",
+    category: "fitness",
+    description: "I like training core and mobility exercises."
   }
 ];
 
-function filterItems() {
-  const filter = document.getElementById("category-filter");
-  const container = document.getElementById("items-container");
-  const count = document.getElementById("results-count");
+function filterItems(category) {
+  let filtered = [];
 
-  if (!filter || !container || !count) {
-    return;
+  switch(category) {
+    case "photography":
+      filtered = interests.filter(item => item.category === "photography");
+      break;
+
+    case "travel":
+      filtered = interests.filter(item => item.category === "travel");
+      break;
+
+    case "fitness":
+      filtered = interests.filter(item => item.category === "fitness");
+      break;
+
+    default:
+      filtered = interests;
   }
 
-  const selected = filter.value;
+  displayItems(filtered);
+}
 
-  const filteredItems = selected === ""
-    ? items
-    : items.filter(item => item.category === selected);
+function displayItems(items) {
+  const results = document.getElementById("results");
 
-  container.innerHTML = "";
+  results.innerHTML = "";
 
-  filteredItems.forEach(item => {
-    container.innerHTML += `
-      <div class="card">
-        <img src="${item.image}" alt="${item.title}">
+  items.forEach(item => {
+    results.innerHTML += `
+      <div class="interest-card">
         <h3>${item.title}</h3>
         <p>${item.description}</p>
       </div>
     `;
   });
-
-  count.textContent = filteredItems.length + " item(s) showing";
 }
 
-function showMessage() {
-  const message = document.getElementById("message");
-
-  if (message) {
-    message.textContent = "Thank you for visiting my website!";
-  }
-}
-
-window.onload = filterItems;
+displayItems(interests);
