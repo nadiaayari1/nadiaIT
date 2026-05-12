@@ -1,43 +1,46 @@
 const items = [
   {
-    name: "Street Photography",
+    name: "Costa Rica Photography",
     category: "Photography",
-    description: "I enjoy capturing candid moments and city scenes with cinematic editing."
+    description: "Travel photography from Costa Rica."
   },
   {
-    name: "Film Cameras",
+    name: "Window Project",
     category: "Photography",
-    description: "I like experimenting with film-style color, composition, and storytelling."
+    description: "A photography project exploring perspective."
   },
   {
-    name: "Porsche GT3 RS",
+    name: "Car Photography",
     category: "Cars",
-    description: "One of my favorite cars because of its aggressive design and track-focused details."
+    description: "Photos from automotive events and meets."
   },
   {
-    name: "Cars and Coffee",
+    name: "GT3 RS Content",
     category: "Cars",
-    description: "I enjoy going to car meets and photographing unique vehicles."
-  },
-  {
-    name: "Costa Rica Adventures",
-    category: "Travel",
-    description: "I like exploring rainforests, waterfalls, beaches, and adventure activities."
+    description: "Photography focused on Porsche GT3 RS models."
   },
   {
     name: "Travel Vlogging",
     category: "Travel",
-    description: "I enjoy creating cinematic travel videos with my action camera."
+    description: "Creating cinematic travel content."
+  },
+  {
+    name: "Rainforest Adventures",
+    category: "Travel",
+    description: "Exploring rainforests and outdoor adventures."
   }
 ];
 
 function renderItems(list) {
+
   const container = document.getElementById("items-container");
 
   container.innerHTML = "";
 
   for (let i = 0; i < list.length; i++) {
+
     const card = document.createElement("div");
+
     card.className = "item-card";
 
     card.innerHTML =
@@ -48,43 +51,57 @@ function renderItems(list) {
     container.appendChild(card);
   }
 
-  document.getElementById("results-count").textContent =
+  document.getElementById("result-count").textContent =
     list.length + " items shown";
 }
 
 function filterItems(category) {
+
   switch (category) {
+
     case "":
       renderItems(items);
       break;
 
     case "Photography":
+
       const filtered1 = [];
+
       for (let i = 0; i < items.length; i++) {
+
         if (items[i].category === "Photography") {
           filtered1.push(items[i]);
         }
       }
+
       renderItems(filtered1);
       break;
 
     case "Cars":
+
       const filtered2 = [];
+
       for (let i = 0; i < items.length; i++) {
+
         if (items[i].category === "Cars") {
           filtered2.push(items[i]);
         }
       }
+
       renderItems(filtered2);
       break;
 
     case "Travel":
+
       const filtered3 = [];
+
       for (let i = 0; i < items.length; i++) {
+
         if (items[i].category === "Travel") {
           filtered3.push(items[i]);
         }
       }
+
       renderItems(filtered3);
       break;
 
